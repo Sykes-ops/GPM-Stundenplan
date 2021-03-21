@@ -2,8 +2,8 @@
 Ein übersichtlicher Stundenplan mit dem man direkt auf die jeweiligen Zoom-Links zu den Vorlesungen zugreifen kann.
 
 **Kurze Gebrauchsanweisung:**\
-Ladet die Datei "GPM Stundenplan SS2021.py" herunter.\
-Durch Doppelklick auf die Datei öffnet sich das Programm.\
+Ladet diese Repository als .zip herunter oder öffnet sie mit GitHub Desktop.\
+Durch Doppelklick auf die Datei "GPM Stundenplan SS2021.py" öffnet sich das Programm.\
 Hier könnt ihr nun euren Nachnamen in das Eingabefeld eingeben.\
 Anschließend klickt ihr auf "Stundenplan anzeigen".\
 Dann sollten euch die jeweiligen Stunden - anhand eurer jeweiligen Gruppe - angezeigt werden. Mit den anderen Buttons könnt ihr die jeweils angezeigte Woche ändern.\
