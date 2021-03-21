@@ -15,3 +15,5 @@ Bei manchen Kursen gibt es noch keine Zoom-Links.\
 Hier werdet ihr durch einen Klick auf die jeweilige Stunde zum zugehörigen Elearning-Kurs weitergeleitet.\
 Da ich keinen Zugriff auf die Englisch-Kurse habe, in denen ich nicht bin, werdet ihr hier einfach zu Google weitergeleitet.\
 Sobald alle Zoom-Links feststehen werde ich diese entsprechend ergänzen.\
+
+Danksagungen und ähnliches gerne an paypal.me/albertju
