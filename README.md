@@ -20,3 +20,17 @@ Bei manchen Kursen gibt es noch keine Zoom-Links.\
 Hier werdet ihr durch einen Klick auf die jeweilige Stunde zum zugehörigen Elearning-Kurs weitergeleitet.\
 Da ich keinen Zugriff auf die Englisch-Kurse habe, in denen ich nicht bin, werdet ihr hier einfach zu Google weitergeleitet.\
 Sobald alle Zoom-Links feststehen werde ich diese entsprechend ergänzen.
+
+**Aktuell vorhandene Zoom-Links:**\
+Englisch, Gruppe 1\
+Wirtsch.Mathe + Statistik, Gerlach\
+Wirtsch.Mathe + Statistik, Faußer 1. Semesterhälfte\
+Wirtsch.Mathe + Statistik, Faußer 2. Semesterhälfte\
+Wirtsch.Mathe + Statistik, Übungen\
+**Es fehlen:**
+Englisch, Gruppe 2-4
+PM + Vorgehensmodelle, Gruppe 1-2
+Wirtsch.Mathe + Statistik, Tormählen
+
+Alle benutzten Module sollten mit der aktuellen Python Version auf eurem Gerät installiert werden.\
+Meldet euch bei gefundenen Fehlern, Fragen oder sonstigem gerne bei mir.
