@@ -16,4 +16,4 @@ Hier werdet ihr durch einen Klick auf die jeweilige Stunde zum zugehörigen Elea
 Da ich keinen Zugriff auf die Englisch-Kurse habe, in denen ich nicht bin, werdet ihr hier einfach zu Google weitergeleitet.\
 Sobald alle Zoom-Links feststehen werde ich diese entsprechend ergänzen.\
 
-Danksagungen und ähnliches gerne an paypal.me/albertju
+Danksagungen und ähnliches gerne an https://paypal.me/albertju
