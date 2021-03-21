@@ -3,6 +3,8 @@ import webbrowser
 import datetime
 
 USER_NAME = "" # Wenn der Name gespeichert werden soll, hier einfach eingeben
+USER_GROUP_2 = 0 # Wenn die Gruppe für PM + Vorgehensmodelle von der eigentlichen Aufteilung abweicht, hier einfach eingeben
+USER_GROUP_4 = 0 # Wenn die Gruppe für Englisch von der eigentlichen Aufteilung abweicht, hier einfach eingeben
 
 LINKS = {
     "PM + Vorgehensmodelle, Gruppe 1":{
@@ -299,9 +301,6 @@ else:
 
 CURRENT_WEEK_DISPLAYED = CURRENT_WEEK
 
-USER_GROUP_2 = 0
-USER_GROUP_4 = 0
-
 WINDOW_WIDTH = (len(DAYS) * LABEL_SPACING_X - 5) + 2 * LABEL_SPACING_X
 WINDOW_HEIGHT = len(TIMES) * LABEL_SPACING_Y - 5
 
@@ -431,18 +430,20 @@ def SetUser():
     if USER_NAME == "":
         USER_NAME = enterNameEntry.get()
     enterNameLabel["text"] = "Nachname: " + USER_NAME
-    if USER_NAME[:2] <= "Kr":
-        USER_GROUP_2 = 1
-    else:
-        USER_GROUP_2 = 2
-    if USER_NAME[:1] <= "E":
-        USER_GROUP_4 = 1
-    elif USER_NAME[:2] <= "Kr":
-        USER_GROUP_4 = 2
-    elif USER_NAME[:1] <= "R":
-        USER_GROUP_4 = 3
-    else:
-        USER_GROUP_4 = 4
+    if USER_GROUP_2 == 0:
+        if USER_NAME[:2] <= "Kr":
+            USER_GROUP_2 = 1
+        else:
+            USER_GROUP_2 = 2
+    if USER_GROUP_4 == 0:
+        if USER_NAME[:1] <= "E":
+            USER_GROUP_4 = 1
+        elif USER_NAME[:2] <= "Kr":
+            USER_GROUP_4 = 2
+        elif USER_NAME[:1] <= "R":
+            USER_GROUP_4 = 3
+        else:
+            USER_GROUP_4 = 4
     
     DisplayModules(CURRENT_WEEK_DISPLAYED, USER_GROUP_2, USER_GROUP_4)
 
