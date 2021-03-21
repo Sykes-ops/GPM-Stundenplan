@@ -34,4 +34,4 @@ PM + Vorgehensmodelle, Gruppe 1-2\
 Wirtsch.Mathe + Statistik, Tormählen
 
 Alle benutzten Module sollten mit der aktuellen Python Version auf eurem Gerät installiert werden.\
-Meldet euch bei gefundenen Fehlern, Fragen oder sonstigem gerne bei mir.
+Meldet euch bei gefundenen Fehlern, Fragen, Verbesserungsvorschlägen oder sonstigem gerne bei mir.
