@@ -7,8 +7,8 @@ Durch Doppelklick auf die Datei öffnet sich das Programm.\
 Hier könnt ihr nun euren Nachnamen in das Eingabefeld eingeben.\
 Anschließend klickt ihr auf "Stundenplan anzeigen".\
 Dann sollten euch die jeweiligen Stunden - anhand eurer jeweiligen Gruppe - angezeigt werden. Mit den anderen Buttons könnt ihr die jeweils angezeigte Woche ändern.\
-Zusätzlich könnt ihr auch auf die einzelnen Stunden klicken, um direkt in das Zoom-Meeting zu kommen.\ 
-Falls ihr nicht bei jedem Start euren Namen erneut eingeben wollt, könnt ihr im Programmcode (rechtsklick -> öffnen mit IDLE oder VSC) in Zeile 5 einfach euren Namen in die Anführungszeichen setzen.
+Zusätzlich könnt ihr auch auf die einzelnen Stunden klicken, um direkt in das Zoom-Meeting zu kommen.\
+Falls ihr nicht bei jedem Start euren Namen erneut eingeben wollt, könnt ihr im Programmcode\ (rechtsklick -> öffnen mit IDLE oder VSC) in Zeile 5 einfach euren Namen in die Anführungszeichen setzen.
 
 **ACHTUNG:**\
 Bei manchen Kursen gibt es noch keine Zoom-Links.\
