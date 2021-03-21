@@ -30,7 +30,7 @@ Wirtsch.Mathe + Statistik, Übungen\
 **Es fehlen:**\
 Englisch, Gruppe 2-4\
 PM + Vorgehensmodelle, Gruppe 1-2\
-Wirtsch.Mathe + Statistik, Tormählen\
+Wirtsch.Mathe + Statistik, Tormählen
 
 Alle benutzten Module sollten mit der aktuellen Python Version auf eurem Gerät installiert werden.\
 Meldet euch bei gefundenen Fehlern, Fragen oder sonstigem gerne bei mir.
