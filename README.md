@@ -11,7 +11,7 @@ Mit den anderen Buttons könnt ihr die jeweils angezeigte Woche ändern.\
 Zusätzlich könnt ihr auch auf die einzelnen Stunden klicken, um direkt in das Zoom-Meeting zu kommen.
 
 Falls ihr nicht bei jedem Start euren Namen erneut eingeben wollt, könnt ihr im Programmcode\
-(rechtsklick -> öffnen mit IDLE oder VSC) in Zeile 5 einfach euren Namen in die Anführungszeichen setzen.\
+(rechtsklick auf die Datei -> öffnen mit IDLE oder VSC) in Zeile 5 einfach euren Namen in die Anführungszeichen setzen.\
 Zusätzlich könnt ihr, falls ihr in PM + Vorgehensmodelle oder Englisch eure Gruppe gewechselt habt,\
 diese in Zeile 6 (PM + Vorgehensmodelle) bzw. Zeile 7 (Englisch) angeben.
 
