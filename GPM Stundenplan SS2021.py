@@ -8,11 +8,11 @@ USER_GROUP_4 = 0 # Wenn die Gruppe für Englisch von der eigentlichen Aufteilung
 
 LINKS = {
     "PM + Vorgehensmodelle, Gruppe 1":{
-        "Zoom":"",
+        "Zoom":"https://hs-neu-ulm.zoom.us/j/93853095952?pwd=Yy9VWWhESzJ5ZjIwSUZ6U3gvU3Rudz09",
         "Elearning":"https://elearning.hs-neu-ulm.de/course/view.php?id=16870"
     },
     "PM + Vorgehensmodelle, Gruppe 2":{
-        "Zoom":"",
+        "Zoom":"https://hs-neu-ulm.zoom.us/j/93853095952?pwd=Yy9VWWhESzJ5ZjIwSUZ6U3gvU3Rudz09",
         "Elearning":"https://elearning.hs-neu-ulm.de/course/view.php?id=16870"
     },
     "Englisch 1, Gruppe 1":{
@@ -48,7 +48,7 @@ LINKS = {
         "Elearning":""
     },
     "Wirtsch.Mathe + Statistik, Tormählen":{ # Montag 14:00 - 15:30
-        "Zoom":"",
+        "Zoom":"https://hs-neu-ulm.zoom.us/j/99692490323?pwd=QmU4QmlWa1R3cld5dU9wT0RLakZwUT09",
         "Elearning":"https://elearning.hs-neu-ulm.de/course/view.php?id=16891"
     },
     "Info- und KommDes":{
