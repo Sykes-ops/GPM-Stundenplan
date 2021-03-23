@@ -15,6 +15,10 @@ LINKS = {
         "Zoom":"https://hs-neu-ulm.zoom.us/j/93853095952?pwd=Yy9VWWhESzJ5ZjIwSUZ6U3gvU3Rudz09",
         "Elearning":"https://elearning.hs-neu-ulm.de/course/view.php?id=16870"
     },
+    "PM + Vorgehensmodelle, Zimmermann":{
+        "Zoom":"https://hs-neu-ulm.zoom.us/j/98834178306?pwd=eXRua1R0elkxTkZhT3NRczhLSFNzQT09",
+        "Elearning":"https://elearning.hs-neu-ulm.de/course/view.php?id=16849"
+    },
     "Englisch 1, Gruppe 1":{
         "Zoom":"https://hs-neu-ulm.zoom.us/j/92641935671?pwd=ek0rRDVsV2w3TFI0eE9VTnFua1pNUT09",
         "Elearning":"https://elearning.hs-neu-ulm.de/course/view.php?id=16950"
@@ -33,7 +37,7 @@ LINKS = {
     },
     "Wirtsch.Mathe + Statistik, Gerlach":{ # Mittwoch 14:00 - 15:30
         "Zoom":"https://hs-neu-ulm.zoom.us/j/95149959870?pwd=UDFXMWs5bko1aUJId2NWSUZTQVFpUT09",
-        "Elearning":""
+        "Elearning":"https://elearning.hs-neu-ulm.de/course/view.php?id=16904"
     },
     "Wirtsch.Mathe + Statistik, Faußer 1. Hälfte":{ # Mittwoch 15:45 - 17:15 1. Hälfte
         "Zoom":"https://hs-neu-ulm.zoom.us/j/93494273950?pwd=R1FyQUtRd3hKVFZUME52S0pBNFRWdz09",
@@ -45,11 +49,11 @@ LINKS = {
     },
     "Wirtsch.Mathe + Statistik, Übungen":{ # Mittwoch 08:15 - 09:45
         "Zoom":"https://hs-neu-ulm.zoom.us/j/96932033370?pwd=R1g4czZHVUNGV2hydlpTM3JNdlBwZz09",
-        "Elearning":""
+        "Elearning":"https://elearning.hs-neu-ulm.de/course/view.php?id=16885"
     },
     "Wirtsch.Mathe + Statistik, Tormählen":{ # Montag 14:00 - 15:30
         "Zoom":"https://hs-neu-ulm.zoom.us/j/99692490323?pwd=QmU4QmlWa1R3cld5dU9wT0RLakZwUT09",
-        "Elearning":"https://elearning.hs-neu-ulm.de/course/view.php?id=16891"
+        "Elearning":"https://elearning.hs-neu-ulm.de/enrol/index.php?id=16891"
     },
     "Info- und KommDes":{
         "Zoom":"",
@@ -131,8 +135,8 @@ MODULES = {
                 "Starttime":1400,
                 "Duration":195,
                 "Clockstring":"14:00 - 17:15",
-                "Zoom-Link":LINKS["PM + Vorgehensmodelle, Gruppe 1"]["Zoom"],
-                "Elearning":LINKS["PM + Vorgehensmodelle, Gruppe 1"]["Elearning"]
+                "Zoom-Link":LINKS["PM + Vorgehensmodelle, Zimmermann"]["Zoom"],
+                "Elearning":LINKS["PM + Vorgehensmodelle, Zimmermann"]["Elearning"]
             },
             {
                 "Group":[1,2],
@@ -141,8 +145,8 @@ MODULES = {
                 "Starttime":1005,
                 "Duration":190,
                 "Clockstring":"10:05 - 13:15",
-                "Zoom-Link":LINKS["PM + Vorgehensmodelle, Gruppe 1"]["Zoom"],
-                "Elearning":LINKS["PM + Vorgehensmodelle, Gruppe 1"]["Elearning"]
+                "Zoom-Link":LINKS["PM + Vorgehensmodelle, Zimmermann"]["Zoom"],
+                "Elearning":LINKS["PM + Vorgehensmodelle, Zimmermann"]["Elearning"]
             },
             {
                 "Group":[1,2],
@@ -151,8 +155,8 @@ MODULES = {
                 "Starttime":1400,
                 "Duration":195,
                 "Clockstring":"14:00 - 17:15",
-                "Zoom-Link":LINKS["PM + Vorgehensmodelle, Gruppe 1"]["Zoom"],
-                "Elearning":LINKS["PM + Vorgehensmodelle, Gruppe 1"]["Elearning"]
+                "Zoom-Link":LINKS["PM + Vorgehensmodelle, Zimmermann"]["Zoom"],
+                "Elearning":LINKS["PM + Vorgehensmodelle, Zimmermann"]["Elearning"]
             }
         ],
     },
@@ -335,11 +339,14 @@ def ModuleHeight(moduleNumber):
         rList.append(times["Duration"] * TTP + (((int(str(times["Starttime"])[-2:]) + times["Duration"]) // 60 * 5)))
     return rList
 
-def OpenURL(times):
-    if times["Zoom-Link"] == "":
-        return lambda e: webbrowser.open_new(times["Elearning"])
+def OpenURL(times, zoomlink):
+    if zoomlink:
+        if times["Zoom-Link"] == "":
+            return lambda e: webbrowser.open_new(times["Elearning"])
+        else:
+            return lambda e: webbrowser.open_new(times["Zoom-Link"])
     else:
-        return lambda e: webbrowser.open_new(times["Zoom-Link"])
+        return lambda e: webbrowser.open_new(times["Elearning"])
 
 currentlyDisplayedLabels = []
 def DisplayModules(currentWeek, group2, group4):
@@ -354,7 +361,8 @@ def DisplayModules(currentWeek, group2, group4):
                     if MODULES[module]["Groups"] == 0 or (MODULES[module]["Groups"] == 2 and group2 in times["Group"]) or (MODULES[module]["Groups"] == 4 and group4 in times["Group"]):
                         newLabel = Label(window, text=MODULES[module]["Name"] + "\n" + times["Clockstring"], bg=LABEL_MODULE_RGB, cursor="hand2", wraplengt=100)
                         newLabel.place(x=ModulePosX(module)[MODULES[module]["Times"].index(times)], y=ModulePosY(module)[MODULES[module]["Times"].index(times)], width=LABEL_WIDTH, height=ModuleHeight(module)[MODULES[module]["Times"].index(times)])
-                        newLabel.bind("<Button-1>", OpenURL(times))
+                        newLabel.bind("<Button-1>", OpenURL(times, True))
+                        newLabel.bind("<Button-3>", OpenURL(times, False))
                         currentlyDisplayedLabels.append(newLabel)
 
 def ChangeWeek(n):
