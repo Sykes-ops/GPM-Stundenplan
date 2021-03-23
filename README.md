@@ -8,7 +8,8 @@ Hier könnt ihr nun euren Nachnamen in das Eingabefeld eingeben.\
 Anschließend klickt ihr auf "Stundenplan anzeigen".\
 Dann sollten euch die jeweiligen Stunden - anhand eurer jeweiligen Gruppe - angezeigt werden.\
 Mit den anderen Buttons könnt ihr die jeweils angezeigte Woche ändern.\
-Zusätzlich könnt ihr auch auf die einzelnen Stunden klicken, um direkt in das Zoom-Meeting zu kommen.
+Wenn ihr auf die einzelnen Stunden **linksklickt**, kommt ihr direkt in das jeweilige Zoom-Meeting.\
+Wenn ihr auf die einzelnen Stunden **rechtsklickt**, kommt ihr direkt zum jeweiligen Elearning-Kurs.
 
 Falls ihr nicht bei jedem Start euren Namen erneut eingeben wollt, könnt ihr im Programmcode\
 (rechtsklick auf die Datei -> öffnen mit IDLE oder VSC) in Zeile 5 einfach\
@@ -22,16 +23,19 @@ Hier werdet ihr durch einen Klick auf die jeweilige Stunde zum zugehörigen Elea
 Da ich keinen Zugriff auf die Englisch-Kurse habe, in denen ich nicht bin, werdet ihr hier einfach zu Google weitergeleitet.\
 Sobald alle Zoom-Links feststehen werde ich diese entsprechend ergänzen.
 
-**Aktuell vorhandene Zoom-Links:**\
-Englisch, Gruppe 1\
-Wirtsch.Mathe + Statistik, Gerlach\
-Wirtsch.Mathe + Statistik, Faußer 1. Semesterhälfte\
-Wirtsch.Mathe + Statistik, Faußer 2. Semesterhälfte\
-Wirtsch.Mathe + Statistik, Übungen\
+**Aktuell vorhandene Links:**\
+Englisch, Gruppe 1 (Zoom und Elearning)\
+PM + Vorgehensmodelle, Hebel Gruppe 1-2 (Zoom und Elearning)\
+PM + Vorgehensmodelle, Zimmermann (Zoom und Elearning)
+Wirtsch.Mathe + Statistik, Gerlach (Zoom und Elearning)\
+Wirtsch.Mathe + Statistik, Faußer 1. Semesterhälfte (Zoom und Elearning)\
+Wirtsch.Mathe + Statistik, Faußer 2. Semesterhälfte (Zoom und Elearning)\
+Wirtsch.Mathe + Statistik, Übungen (Zoom und Elearning)\
+Wirtsch.Mathe + Statistik, Tormählen (Zoom und Elearning)\
 **Es fehlen:**\
-Englisch, Gruppe 2-4\
-PM + Vorgehensmodelle, Gruppe 1-2\
-Wirtsch.Mathe + Statistik, Tormählen
+Englisch, Gruppe 2-4 (Zoom und Elearning)\
+Info- und KommDes (Zoom)
 
+Keine Garantie für die Korrektheit von Zoom- und Elearning-Links.\
 Alle benutzten Module sollten mit der aktuellen Python Version auf eurem Gerät installiert werden.\
 Meldet euch bei gefundenen Fehlern, Fragen, Verbesserungsvorschlägen oder sonstigem gerne bei mir.
