@@ -3,8 +3,8 @@ import webbrowser
 import datetime
 
 USER_NAME = "" # Wenn der Name gespeichert werden soll, hier einfach eingeben
-USER_GROUP_2 = 0 # Wenn die Gruppe für PM + Vorgehensmodelle von der eigentlichen Aufteilung abweicht, hier einfach eingeben
-USER_GROUP_4 = 0 # Wenn die Gruppe für Englisch von der eigentlichen Aufteilung abweicht, hier einfach eingeben
+# USER_GROUP_2 = 0 # Wenn die Gruppe für PM + Vorgehensmodelle von der eigentlichen Aufteilung abweicht, hier einfach eingeben
+# USER_GROUP_4 = 0 # Wenn die Gruppe für Englisch von der eigentlichen Aufteilung abweicht, hier einfach eingeben
 
 LINKS = {
     "PM + Vorgehensmodelle, Gruppe 1":{
@@ -17,6 +17,14 @@ LINKS = {
     },
     "PM + Vorgehensmodelle, Zimmermann":{
         "Zoom":"https://hs-neu-ulm.zoom.us/j/98834178306?pwd=eXRua1R0elkxTkZhT3NRczhLSFNzQT09",
+        "Elearning":"https://elearning.hs-neu-ulm.de/course/view.php?id=16849"
+    },
+    "PM + Vorgehensmodelle, Zimmermann 13":{
+        "Zoom":"https://hs-neu-ulm.zoom.us/j/94599788454?pwd=bEFoTDI0bUZPTDNLdXJPTXBHUGdPdz09",
+        "Elearning":"https://elearning.hs-neu-ulm.de/course/view.php?id=16849"
+    },
+    "PM + Vorgehensmodelle, Zimmermann 16":{
+        "Zoom":"https://hs-neu-ulm.zoom.us/j/99057389432?pwd=VjY5N3JNMXR1dEdpTVlTc2xjaFlhZz09",
         "Elearning":"https://elearning.hs-neu-ulm.de/course/view.php?id=16849"
     },
     "Englisch 1, Gruppe 1":{
@@ -135,8 +143,8 @@ MODULES = {
                 "Starttime":1400,
                 "Duration":195,
                 "Clockstring":"14:00 - 17:15",
-                "Zoom-Link":LINKS["PM + Vorgehensmodelle, Zimmermann"]["Zoom"],
-                "Elearning":LINKS["PM + Vorgehensmodelle, Zimmermann"]["Elearning"]
+                "Zoom-Link":LINKS["PM + Vorgehensmodelle, Zimmermann 16"]["Zoom"],
+                "Elearning":LINKS["PM + Vorgehensmodelle, Zimmermann 16"]["Elearning"]
             },
             {
                 "Group":[1,2],
@@ -145,8 +153,8 @@ MODULES = {
                 "Starttime":1005,
                 "Duration":190,
                 "Clockstring":"10:05 - 13:15",
-                "Zoom-Link":LINKS["PM + Vorgehensmodelle, Zimmermann"]["Zoom"],
-                "Elearning":LINKS["PM + Vorgehensmodelle, Zimmermann"]["Elearning"]
+                "Zoom-Link":LINKS["PM + Vorgehensmodelle, Zimmermann 13"]["Zoom"],
+                "Elearning":LINKS["PM + Vorgehensmodelle, Zimmermann 13"]["Elearning"]
             },
             {
                 "Group":[1,2],
@@ -348,23 +356,6 @@ def OpenURL(times, zoomlink):
     else:
         return lambda e: webbrowser.open_new(times["Elearning"])
 
-currentlyDisplayedLabels = []
-def DisplayModules(currentWeek, group2, group4):
-    global currentlyDisplayedLabels
-    for label in currentlyDisplayedLabels:
-        label.destroy()
-    currentlyDisplayedLabels = []
-    if not USER_NAME == "":
-        for module in MODULES:
-            for times in MODULES[module]["Times"]:
-                if currentWeek in times["Weeks"]:
-                    if MODULES[module]["Groups"] == 0 or (MODULES[module]["Groups"] == 2 and group2 in times["Group"]) or (MODULES[module]["Groups"] == 4 and group4 in times["Group"]):
-                        newLabel = Label(window, text=MODULES[module]["Name"] + "\n" + times["Clockstring"], bg=LABEL_MODULE_RGB, cursor="hand2", wraplengt=100)
-                        newLabel.place(x=ModulePosX(module)[MODULES[module]["Times"].index(times)], y=ModulePosY(module)[MODULES[module]["Times"].index(times)], width=LABEL_WIDTH, height=ModuleHeight(module)[MODULES[module]["Times"].index(times)])
-                        newLabel.bind("<Button-1>", OpenURL(times, True))
-                        newLabel.bind("<Button-3>", OpenURL(times, False))
-                        currentlyDisplayedLabels.append(newLabel)
-
 def ChangeWeek(n):
     global CURRENT_WEEK_DISPLAYED
     global USER_GROUP_2
@@ -378,13 +369,14 @@ def ChangeWeek(n):
     DisplayModules(CURRENT_WEEK_DISPLAYED, USER_GROUP_2, USER_GROUP_4)
     SetButtons()
 
-enterNameLabel = Label(window, text="Nachname: " + USER_NAME, anchor="w", wraplengt=120)
-enterNameLabel.pack()
-enterNameLabel.place(x=680, y=65, width=120, height=60)
-enterNameEntry = Entry(window)
-enterNameEntry.place(x=680, y=130, width=120, height=30)
-enterNameButton = Button(window, text="Stundenplan anzeigen", command=lambda: SetUser())
-enterNameButton.place(x=680, y=165, width=120, height=30)
+if USER_NAME == "":
+    enterNameLabel = Label(window, text="Nachname: " + USER_NAME, anchor="w", wraplengt=120)
+    enterNameLabel.pack()
+    enterNameLabel.place(x=680, y=65, width=120, height=60)
+    enterNameEntry = Entry(window)
+    enterNameEntry.place(x=680, y=130, width=120, height=30)
+    enterNameButton = Button(window, text="Stundenplan anzeigen", command=lambda: SetUser())
+    enterNameButton.place(x=680, y=165, width=120, height=30)
 
 forwardButton = Button(window, text=">", command=lambda: ChangeWeek(1))
 forwardButton.place(x=800, y=200, width=30, height=30)
@@ -435,28 +427,42 @@ def SetUser():
     global USER_GROUP_2
     global USER_GROUP_4
 
-    if USER_NAME == "":
-        USER_NAME = enterNameEntry.get()
+    USER_NAME = enterNameEntry.get()
     enterNameLabel["text"] = "Nachname: " + USER_NAME
-    if USER_GROUP_2 == 0:
-        if USER_NAME[:2] <= "Kr":
-            USER_GROUP_2 = 1
-        else:
-            USER_GROUP_2 = 2
-    if USER_GROUP_4 == 0:
-        if USER_NAME[:1] <= "E":
-            USER_GROUP_4 = 1
-        elif USER_NAME[:2] <= "Kr":
-            USER_GROUP_4 = 2
-        elif USER_NAME[:1] <= "R":
-            USER_GROUP_4 = 3
-        else:
-            USER_GROUP_4 = 4
+
+    if USER_NAME[:2] <= "Kr":
+        USER_GROUP_2 = 1
+    else:
+        USER_GROUP_2 = 2
+    
+    if USER_NAME[:1] <= "E":
+        USER_GROUP_4 = 1
+    elif USER_NAME[:2] <= "Kr":
+        USER_GROUP_4 = 2
+    elif USER_NAME[:1] <= "R":
+        USER_GROUP_4 = 3
+    else:
+        USER_GROUP_4 = 4
     
     DisplayModules(CURRENT_WEEK_DISPLAYED, USER_GROUP_2, USER_GROUP_4)
 
-DisplayModules(CURRENT_WEEK_DISPLAYED, USER_GROUP_2, USER_GROUP_4)
+currentlyDisplayedLabels = []
+def DisplayModules(currentWeek, group2, group4):
+    global currentlyDisplayedLabels
+    for label in currentlyDisplayedLabels:
+        label.destroy()
+    currentlyDisplayedLabels = []
+    if not USER_NAME == "":
+        for module in MODULES:
+            for times in MODULES[module]["Times"]:
+                if currentWeek in times["Weeks"]:
+                    if MODULES[module]["Groups"] == 0 or (MODULES[module]["Groups"] == 2 and group2 in times["Group"]) or (MODULES[module]["Groups"] == 4 and group4 in times["Group"]):
+                        newLabel = Label(window, text=MODULES[module]["Name"] + "\n" + times["Clockstring"], bg=LABEL_MODULE_RGB, cursor="hand2", wraplengt=100)
+                        newLabel.place(x=ModulePosX(module)[MODULES[module]["Times"].index(times)], y=ModulePosY(module)[MODULES[module]["Times"].index(times)], width=LABEL_WIDTH, height=ModuleHeight(module)[MODULES[module]["Times"].index(times)])
+                        newLabel.bind("<Button-1>", OpenURL(times, True))
+                        newLabel.bind("<Button-3>", OpenURL(times, False))
+                        currentlyDisplayedLabels.append(newLabel)
+
 SetButtons()
 SetTable()
-SetUser()
 window.mainloop()
