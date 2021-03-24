@@ -1,5 +1,5 @@
 # GPM-Stundenplan
-Ein übersichtlicher Stundenplan mit dem man direkt auf die jeweiligen Zoom-Links zu den Vorlesungen zugreifen kann. (letztes Update am 23.03.2021, 18:00 Uhr)
+Ein übersichtlicher Stundenplan mit dem man direkt auf die jeweiligen Zoom-Links zu den Vorlesungen zugreifen kann. (letztes Update am 24.03.2021, 19:00 Uhr)
 
 **Kurze Gebrauchsanweisung:**\
 Ladet diese Repository als .zip herunter oder öffnet sie mit GitHub Desktop.\
@@ -14,8 +14,8 @@ Wenn ihr auf die einzelnen Stunden **rechtsklickt**, kommt ihr direkt zum jeweil
 Falls ihr nicht bei jedem Start euren Namen erneut eingeben wollt, könnt ihr im Programmcode\
 (rechtsklick auf die Datei -> öffnen mit IDLE oder VSC) in Zeile 5 einfach\
 euren Nachnamen in die Anführungszeichen setzen.\
-Zusätzlich könnt ihr, falls ihr in PM + Vorgehensmodelle oder Englisch eure Gruppe gewechselt habt,\
-diese in Zeile 6 (PM + Vorgehensmodelle) bzw. Zeile 7 (Englisch) angeben.
+~~Zusätzlich könnt ihr, falls ihr in PM + Vorgehensmodelle oder Englisch eure Gruppe gewechselt habt,\
+diese in Zeile 6 (PM + Vorgehensmodelle) bzw. Zeile 7 (Englisch) angeben.~~ (funktioniert momentan nicht)
 
 **ACHTUNG:**\
 Bei manchen Kursen gibt es noch keine Zoom-Links.\
