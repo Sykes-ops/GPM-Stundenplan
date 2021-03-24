@@ -1,5 +1,5 @@
 # GPM-Stundenplan
-Ein übersichtlicher Stundenplan mit dem man direkt auf die jeweiligen Zoom-Links zu den Vorlesungen zugreifen kann. (letztes Update am 24.03.2021, 19:00 Uhr)
+Ein übersichtlicher Stundenplan mit dem man direkt auf die jeweiligen Zoom-Links zu den Vorlesungen zugreifen kann. (letztes Update am 24.03.2021, 23:00 Uhr)
 
 **Kurze Gebrauchsanweisung:**\
 Ladet diese Repository als .zip herunter oder öffnet sie mit GitHub Desktop.\
