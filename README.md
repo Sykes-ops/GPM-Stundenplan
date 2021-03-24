@@ -32,7 +32,7 @@ Wirtsch.Mathe + Statistik, Faußer 1. Semesterhälfte (Zoom und Elearning)\
 Wirtsch.Mathe + Statistik, Faußer 2. Semesterhälfte (Zoom und Elearning)\
 Wirtsch.Mathe + Statistik, Übungen (Zoom und Elearning)\
 Wirtsch.Mathe + Statistik, Tormählen (Zoom und Elearning)\
-Info- und KommDes (Zoom und Elearning)
+Info- und KommDes (Zoom und Elearning)\
 **Es fehlen:**\
 Englisch, Gruppe 2-4 (Zoom und Elearning)
 
