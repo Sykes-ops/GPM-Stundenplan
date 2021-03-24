@@ -64,7 +64,7 @@ LINKS = {
         "Elearning":"https://elearning.hs-neu-ulm.de/enrol/index.php?id=16891"
     },
     "Info- und KommDes":{
-        "Zoom":"",
+        "Zoom":"https://hs-neu-ulm.zoom.us/j/97025979499?pwd=dE5aWkl5Y0w3Y2poZGVLd1BOSjJKZz09",
         "Elearning":"https://elearning.hs-neu-ulm.de/course/view.php?id=16869"
     }
 }
