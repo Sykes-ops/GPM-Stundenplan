@@ -25,7 +25,7 @@ Sobald alle Zoom-Links feststehen werde ich diese entsprechend ergänzen.
 **Aktuell vorhandene Links:**\
 Englisch, Gruppe 1 (Zoom und Elearning)\
 PM + Vorgehensmodelle, Hebel Gruppe 1-2 (Zoom und Elearning)\
-PM + Vorgehensmodelle, Zimmermann (Zoom und Elearning)
+PM + Vorgehensmodelle, Zimmermann (Zoom und Elearning)\
 Wirtsch.Mathe + Statistik, Gerlach (Zoom und Elearning)\
 Wirtsch.Mathe + Statistik, Faußer 1. Semesterhälfte (Zoom und Elearning)\
 Wirtsch.Mathe + Statistik, Faußer 2. Semesterhälfte (Zoom und Elearning)\
