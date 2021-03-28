@@ -3,8 +3,6 @@ import webbrowser
 import datetime
 
 USER_NAME = "" # Wenn der Name gespeichert werden soll, hier einfach eingeben
-# USER_GROUP_2 = 0 # Wenn die Gruppe für PM + Vorgehensmodelle von der eigentlichen Aufteilung abweicht, hier einfach eingeben
-# USER_GROUP_4 = 0 # Wenn die Gruppe für Englisch von der eigentlichen Aufteilung abweicht, hier einfach eingeben
 
 LINKS = {
     "PM + Vorgehensmodelle, Gruppe 1":{
@@ -292,6 +290,9 @@ MODULES = {
     }
 }
 
+USER_GROUP_2 = 0
+USER_GROUP_4 = 0
+
 LABEL_RGB= "#0099ff"
 LABEL_MODULE_RGB = "#33ccff"
 LABEL_WIDTH = 100
@@ -372,23 +373,50 @@ def ChangeWeek(n):
 if USER_NAME == "":
     enterNameLabel = Label(window, text="Nachname: " + USER_NAME, anchor="w", wraplengt=120)
     enterNameLabel.pack()
-    enterNameLabel.place(x=680, y=65, width=120, height=60)
+    enterNameLabel.place(x=680, y=20, width=120, height=60)
     enterNameEntry = Entry(window)
-    enterNameEntry.place(x=680, y=130, width=120, height=30)
+    enterNameEntry.place(x=680, y=85, width=120, height=30)
     enterNameButton = Button(window, text="Stundenplan anzeigen", command=lambda: SetUser())
-    enterNameButton.place(x=680, y=165, width=120, height=30)
+    enterNameButton.place(x=680, y=120, width=120, height=30)
 
 forwardButton = Button(window, text=">", command=lambda: ChangeWeek(1))
-forwardButton.place(x=800, y=200, width=30, height=30)
+forwardButton.place(x=800, y=155, width=30, height=30)
 currentButton = Button(window, text="Momentane Woche", command=lambda: ChangeWeek(0))
-currentButton.place(x=680, y=200, width=120, height=30)
+currentButton.place(x=680, y=155, width=120, height=30)
 backwardButton = Button(window, text="<", command=lambda: ChangeWeek(-1))
-backwardButton.place(x=650, y=200, width=30, height=30)
+backwardButton.place(x=650, y=155, width=30, height=30)
 
 currentWeekLabel = Label(window, text="Momentane KW: " + str(CURRENT_WEEK))
-currentWeekLabel.place(x=680, y=235, width=120, height=30)
+currentWeekLabel.place(x=680, y=190, width=120, height=30)
 displayedWeekLabel = Label(window, text="Angezeigte KW: " + str(CURRENT_WEEK_DISPLAYED))
-displayedWeekLabel.place(x=680, y=260, width=120, height=30)
+displayedWeekLabel.place(x=680, y=225, width=120, height=30)
+
+def ChangeGroup(course, group):
+    global USER_GROUP_2
+    global USER_GROUP_4
+
+    if course == 2:
+        USER_GROUP_2 = group
+    if course == 4:
+        USER_GROUP_4 = group
+    
+    SetButtons()
+    DisplayModules(CURRENT_WEEK_DISPLAYED, USER_GROUP_2, USER_GROUP_4)
+
+
+group2Button1 = Button(window, text="PM Gruppe 1", wraplengt=90, command=lambda: ChangeGroup(2,1))
+group2Button1.place(x=650, y=260, width=90, height=45)
+group2Button2 = Button(window, text="PM Gruppe 2", wraplengt=90, command=lambda: ChangeGroup(2,2))
+group2Button2.place(x=740, y=260, width=90, height=45)
+
+group4Button1 = Button(window, text="Eng. Gruppe 1", wraplengt=45, command=lambda: ChangeGroup(4,1))
+group4Button1.place(x=650, y=310, width=45, height=45)
+group4Button2 = Button(window, text="Eng. Gruppe 2", wraplengt=45, command=lambda: ChangeGroup(4,2))
+group4Button2.place(x=695, y=310, width=45, height=45)
+group4Button3 = Button(window, text="Eng. Gruppe 3", wraplengt=45, command=lambda: ChangeGroup(4,3))
+group4Button3.place(x=740, y=310, width=45, height=45)
+group4Button4 = Button(window, text="Eng. Gruppe 4", wraplengt=45, command=lambda: ChangeGroup(4,4))
+group4Button4.place(x=785, y=310, width=45, height=45)
 
 def SetButtons():
     if CURRENT_WEEK_DISPLAYED <= FIRST_WEEK:
@@ -404,6 +432,87 @@ def SetButtons():
     else:
         forwardButton["state"] = "normal"
         forwardButton["text"] = ">"
+
+    if USER_GROUP_2 == 1:
+        group2Button1["state"] = "disabled"
+        group2Button1["text"] = ""
+
+        group2Button2["state"] = "normal"
+        group2Button2["text"] = "PM Gruppe 2"
+    elif USER_GROUP_2 == 2:
+        group2Button1["state"] = "normal"
+        group2Button1["text"] = "PM Gruppe 1"
+
+        group2Button2["state"] = "disabled"
+        group2Button2["text"] = ""
+    else:
+        group2Button1["state"] = "normal"
+        group2Button1["text"] = "PM Gruppe 1"
+
+        group2Button2["state"] = "normal"
+        group2Button2["text"] = "PM Gruppe 2"
+
+
+    if USER_GROUP_4 == 1:
+        group4Button1["state"] = "disabled"
+        group4Button1["text"] = ""
+
+        group4Button2["state"] = "normal"
+        group4Button2["text"] = "Eng. Gruppe 2"
+
+        group4Button3["state"] = "normal"
+        group4Button3["text"] = "Eng. Gruppe 3"
+
+        group4Button4["state"] = "normal"
+        group4Button4["text"] = "Eng. Gruppe 4"
+    elif USER_GROUP_4 == 2:
+        group4Button1["state"] = "normal"
+        group4Button1["text"] = "Eng. Gruppe 1"
+
+        group4Button2["state"] = "disabled"
+        group4Button2["text"] = ""
+
+        group4Button3["state"] = "normal"
+        group4Button3["text"] = "Eng. Gruppe 3"
+
+        group4Button4["state"] = "normal"
+        group4Button4["text"] = "Eng. Gruppe 4"
+    elif USER_GROUP_4 == 3:
+        group4Button1["state"] = "normal"
+        group4Button1["text"] = "Eng. Gruppe 1"
+
+        group4Button2["state"] = "normal"
+        group4Button2["text"] = "Eng. Gruppe 2"
+
+        group4Button3["state"] = "disabled"
+        group4Button3["text"] = ""
+
+        group4Button4["state"] = "normal"
+        group4Button4["text"] = "Eng. Gruppe 4"
+    elif USER_GROUP_4 == 4:
+        group4Button1["state"] = "normal"
+        group4Button1["text"] = "Eng. Gruppe 1"
+
+        group4Button2["state"] = "normal"
+        group4Button2["text"] = "Eng. Gruppe 2"
+
+        group4Button3["state"] = "normal"
+        group4Button3["text"] = "Eng. Gruppe 3"
+
+        group4Button4["state"] = "disabled"
+        group4Button4["text"] = ""
+    else:
+        group4Button1["state"] = "normal"
+        group4Button1["text"] = "Eng. Gruppe 1"
+
+        group4Button2["state"] = "normal"
+        group4Button2["text"] = "Eng. Gruppe 2"
+
+        group4Button3["state"] = "normal"
+        group4Button3["text"] = "Eng. Gruppe 3"
+
+        group4Button4["state"] = "normal"
+        group4Button4["text"] = "Eng. Gruppe 4"
 
 def SetTable():
     for time in TIMES:
@@ -444,6 +553,7 @@ def SetUser():
     else:
         USER_GROUP_4 = 4
     
+    SetButtons()
     DisplayModules(CURRENT_WEEK_DISPLAYED, USER_GROUP_2, USER_GROUP_4)
 
 currentlyDisplayedLabels = []
