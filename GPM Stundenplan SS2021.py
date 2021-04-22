@@ -379,6 +379,10 @@ if USER_NAME == "":
     enterNameButton = Button(window, text="Stundenplan anzeigen", command=lambda: SetUser())
     enterNameButton.place(x=680, y=120, width=120, height=30)
 
+def enter(event = None):
+    SetUser()
+window.bind("<Return>", enter)
+
 forwardButton = Button(window, text=">", command=lambda: ChangeWeek(1))
 forwardButton.place(x=800, y=155, width=30, height=30)
 currentButton = Button(window, text="Momentane Woche", command=lambda: ChangeWeek(0))
